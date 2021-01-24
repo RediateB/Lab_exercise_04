@@ -36,8 +36,8 @@ function division(n,d) {
        console.log(divide); 
     }
 }
-
-var option=prompt("1.addition \n 2.subtraction \n 3.multiplication \n 4.division");
+(function () {
+    var option=prompt("1.addition \n 2.subtraction \n 3.multiplication \n 4.division");
 if (option=="1") {
     var addArray = prompt("Enter the numbers separated with comma.").split(",")
     addition(addArray)
@@ -56,3 +56,4 @@ else if(option=="4"){
     var denominator = prompt("Enter the denominator(CAN NOT BE 0!)")
     division(numerator,denominator)
 }
+})()
