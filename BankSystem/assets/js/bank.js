@@ -27,8 +27,18 @@ function withdraw(amount) {
    
 }
 
-function transfer(amount) {
-    
+function transfer(sender,receiver,amount) {
+    if (parseInt(amount)>balance) {
+        console.log("Your balance is insufficient!");
+    }
+    else{
+        var balanceL= balance-parseInt(amount)
+        balance=balanceL
+        console.log("Dear " + sender +" You have successfully transfer " + amount + " to " + receiver)
+    }
+}
+function currentBalance() {
+    console.log("The balance is " + balance);
 }
 
 
@@ -45,10 +55,12 @@ else if(option=="2"){
     withdraw(withdrawM)
 }
 else if(option=="3"){
-    balanceM()
-}
-else if(option=="4"){
     var sender = prompt("Enter Your Name:")
     var receiver = prompt("Enter The receiver Name:")
     var amountToBeSent= prompt("Enter the amount of money you want to transfer")
+    
+    transfer(sender,receiver,amountToBeSent)
+}
+else if(option=="4"){
+   currentBalance()
 }
